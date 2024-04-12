@@ -3,8 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 
 const URL = import.meta.env.VITE_BASE_URL;
 
-const Login = ({ setToggleLogin }) => {
-  const [user, setUser] = useState({ username: "", password: "" });
+const Login = ({ setToggleLogin, setUserId }) => {
+  const [user, setUser] = useState({ username: "", password: ""});
   const navigate = useNavigate();
 
   function handleChange(event) {
@@ -23,9 +23,10 @@ const Login = ({ setToggleLogin }) => {
     };
 
     try {
+      console.log(`${URL}/api/auth/login`)
       const res = await fetch(`${URL}/api/auth/login`, options);
       const data = await res.json();
-
+           setUserId(data.user.user_id)
       if (!res.ok) {
         alert("Login failed");
         setUser({ username: "", password: "" });
@@ -34,6 +35,7 @@ const Login = ({ setToggleLogin }) => {
 
       if (data.token) {
         localStorage.setItem("token", data.token);
+        localStorage.setItem("user_id", data.user.user_id);
         await setToggleLogin(true);
         navigate("/dashboard");
       } else {
