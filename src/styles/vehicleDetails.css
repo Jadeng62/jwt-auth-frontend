@@ -1,0 +1,17 @@
+.vehicle-card {
+    border: 1px solid #4e4e51;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vehicle-details {
+    margin-top: 10px;
+    background-color:  #F3F3F4;
+    padding: 8px;
+}
+
+.vehicle-card:hover {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}

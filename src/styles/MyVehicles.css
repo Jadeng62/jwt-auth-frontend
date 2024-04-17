@@ -1,0 +1,38 @@
+.myVehicles-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.myVehicles-img {
+    height: 250px;
+    width: auto;
+    margin-top: 120px;
+    margin-left: 10px;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+
+.myVehicles-create-btn {
+    position: absolute;
+    top: 250px;
+    right: 0;
+    padding: 10px;
+    border: none;
+    margin-right: 80px;
+    background-color: #0056b3;
+    color: whitesmoke;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.myVehicles-create-btn:hover {
+    background-color: #004494;
+}

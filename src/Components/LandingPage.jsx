@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../styles/landingPage.css"
 
-function LandingPage() {
+function LandingPage({toggleLogin}) {
   return (
     <div className="landing">
       <h1 className="landing-header-h1">Keep track of your Vehicles & Repairs !!!</h1>
@@ -17,9 +17,9 @@ function LandingPage() {
               ownership and usage. Efficient, reliable, and user-friendly.
               Discover a smarter way to keep your luxury vehicles organized."</p>
           </section>
-          <div>
+             {!toggleLogin && <div>
            <Link to="/dashboard" className="landing-signup-link"><h4>Click here to login, Or if you don't already have an account with us sign up!</h4></Link> 
-          </div>
+          </div>}
           <article>
            <div>
             <h3>What is our purpose ?</h3>

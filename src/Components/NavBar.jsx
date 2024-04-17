@@ -41,20 +41,25 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
           <Link to="/vehicles" className="nav-link">
             <li className="nav-li">My Vehicles</li>
           </Link>
-        </ul>
-      </div>
-      {!toggleLogin ? (
-        <Link to={"/login"} className="nav-link nav-login-container">
-          <span className="nav-btn-login">Login</span>
-        </Link>
-      ) : (
-        <div className="nav-login-container">
-          {user && <span className="nav-username-display">Hello, {user.username.toUpperCase()} | </span>}
-          <Link onClick={handleLogout} className="nav-link">
-            <span className="nav-btn-logout">Logout</span>
+          <Link to="/dashboard" className="nav-link">
+             <li className="nav-li profile">My Profile</li>
           </Link>
-        </div>
+      {!toggleLogin ? (
+        <li>
+        <Link to={"/login"} className="nav-link">
+          <span className="nav-btn login">Login</span>
+        </Link>
+        </li>
+      ) : (
+        <li>
+          {user && <span className="nav-username-display"></span>}
+          <Link onClick={handleLogout} className="nav-link">
+            <span className="nav-btn logout">Logout</span>
+          </Link>
+        </li>
       )}
+      </ul>
+      </div>
       </div>
     </div>
   );

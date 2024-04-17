@@ -8,6 +8,7 @@ import Dashboard from "./Components/Dashboard";
 import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
 import MyVehicle from "./Components/MyVehicles";
+import VehicleDetails from "./Components/VehicleDetails";
 
 
 
@@ -42,7 +43,7 @@ function App() {
       />
 
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage toggleLogin={toggleLogin}/>} />
         <Route
           path="/login"
           element={<Login setToggleLogin={setToggleLogin} setUserId={setUserId}/>}
@@ -54,6 +55,7 @@ function App() {
 
         <Route element={<ProtectedRoute />}>
          <Route path="/vehicles" element={<MyVehicle />}/>
+         <Route path="/vehicles/:id" element={<VehicleDetails />}/>
           <Route
             path="/dashboard"
             element={<Dashboard handleLogout={handleLogout} userId={userId}/>}

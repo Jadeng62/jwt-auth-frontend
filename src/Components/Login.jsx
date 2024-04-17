@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
+import "../styles/loginPage.css"
+
 const URL = import.meta.env.VITE_BASE_URL;
 
 const Login = ({ setToggleLogin, setUserId }) => {
@@ -64,24 +66,10 @@ const Login = ({ setToggleLogin, setUserId }) => {
   }
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Login Component</h1>
-      <br />
-      <h2>
-        Use the DemoUser button to login and save time during your presentation
-      </h2>
-      <button onClick={handleDemoSignIn}>Demo User</button>
-      <br />
-      <br />
-      <br />
-
-      <h3> Remove the 'br' tags and these instructions if you use this code</h3>
-
-      <br />
-      <br />
-      <br />
-      <h3>Below is the regular login form which should be functional</h3>
-      <form onSubmit={handleSubmit}>
+    <div className="login-container">
+      <h1 className="login-header-h1">Login or Sign-Up</h1>
+      <button onClick={handleDemoSignIn} className="login-btn">Demo User <span>(For developer use only !!!)</span></button>
+      <form onSubmit={handleSubmit} className="login-form">
         <label htmlFor="username">
           <input
             id="username"
@@ -90,6 +78,7 @@ const Login = ({ setToggleLogin, setUserId }) => {
             placeholder="username"
             autoComplete="username"
             onChange={handleChange}
+            className="login-form-input"
           />
         </label>
 
@@ -101,12 +90,13 @@ const Login = ({ setToggleLogin, setUserId }) => {
             placeholder="password"
             onChange={handleChange}
             autoComplete="current-password"
+            className="login-form-input"
           />
         </label>
-        <button>Submit</button>
+        <button className="login-btn">Submit</button>
       </form>
-      <p>
-        No Account? <Link to="/register">Register</Link>
+      <p className="register-p">
+        No Account? <Link to="/register" className="login-register">Register</Link>
       </p>
     </div>
   );
