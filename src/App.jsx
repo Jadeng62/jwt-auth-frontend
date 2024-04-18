@@ -9,6 +9,7 @@ import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
 import MyVehicle from "./Components/MyVehicles";
 import VehicleDetails from "./Components/VehicleDetails";
+import Footer from "./Components/Footer";
 
 
 
@@ -22,8 +23,10 @@ function App() {
   useEffect(() => {
    if (localStorage.getItem("user_id")) {
     setUserId(localStorage.getItem("user_id"))
+    setToggleLogin(true)
    }
   },[])
+  
 
   async function handleLogout() {
     localStorage.removeItem("token");

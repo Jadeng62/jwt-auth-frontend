@@ -19,6 +19,7 @@ const VehicleForm = ({toggleForm, setToggleForm, setAddedVehicle}) => {
         interior_color: "",
         custom: "",
         torque: "",
+        img: ""
     })
 
     const URL = import.meta.env.VITE_BASE_URL
@@ -43,6 +44,7 @@ const VehicleForm = ({toggleForm, setToggleForm, setAddedVehicle}) => {
             interior_color: "",
             custom: "",
             torque: "",
+            img: ""
         });
 
        setToggleForm(!toggleForm)
@@ -75,6 +77,7 @@ const VehicleForm = ({toggleForm, setToggleForm, setAddedVehicle}) => {
             interior_color: "",
             custom: "",
             torque: "",
+            img: ""
         });
 
        setToggleForm(!toggleForm)
@@ -90,9 +93,9 @@ const VehicleForm = ({toggleForm, setToggleForm, setAddedVehicle}) => {
         <label htmlFor="make">
           <input
             id="make"
-            required
             value={newVehicle.make}
             type="text"
+            required
             placeholder="Vehicle Make"
             onChange={handleChange}
             className="vehicle-form-input"
@@ -205,7 +208,7 @@ const VehicleForm = ({toggleForm, setToggleForm, setAddedVehicle}) => {
             />
         </label>
 
-        <label>
+        <label htmlFor="torque"> 
             <input 
             id="torque"
             value={newVehicle.torque}
@@ -215,6 +218,18 @@ const VehicleForm = ({toggleForm, setToggleForm, setAddedVehicle}) => {
             className="vehicle-form-input"
             />
         </label>
+
+        <label htmlFor="img">
+            <input 
+            id="img"
+            value={newVehicle.img}
+            type="text"
+            placeholder="Enter a photo of vehicle"
+            onChange={handleChange}
+            className="vehicle-form-input"
+            />
+        </label>
+
         <div className="vehicle-form-btn-container">
         <button onClick={handleSubmit} className="vehicle-form-btn">Submit</button>
         <button onClick={handleCancel} className="vehicle-form-btn danger">Cancel</button>

@@ -53,3 +53,7 @@
     justify-content: flex-end;
     flex: 1;
 }
+
+.nav-header-h1 {
+    padding-left: 60px;
+}

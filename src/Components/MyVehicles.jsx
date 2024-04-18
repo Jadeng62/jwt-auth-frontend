@@ -58,15 +58,23 @@ const MyVehicle = () => {
               setToggleForm={setToggleForm}
               setAddedVehicle={setAddedVehicle}
               />}
-            <h2 className="myVehicles-header">Here is all of your saved luxury vehicles</h2>
+            <h2 className="myVehicles-header">Saved Luxury Vehicles</h2>
             <ul className="myVehicles-ul">
                 {userVehicles.length > 0 ? (
                      userVehicles.map((vehicle) => (
-                        <img src="https://klar-rent.com/uploads/images/cars/img-placeholder.jpg"
-                        alt="vehicle img here"
+                       <li key={vehicle.vehicle_id} className="myVehicles-item">
+                        <img 
+                        src={vehicle.img || "https://klar-rent.com/uploads/images/cars/img-placeholder.jpg"}
+                        alt="Vehilce img"
                         className="myVehicles-img"
                         onClick={() => handleVehicleDetails(vehicle.vehicle_id)}
-                        key={vehicle.vehicle_id}></img>
+                        />
+                        {vehicle.img === "https://klar-rent.com/uploads/images/cars/img-placeholder.jpg" && (
+                          <div className="myVehicles-overlay">
+                            {vehicle.make} {vehicle.model}
+                          </div>
+                        )}
+                       </li>
                      ))
                 ) : (
                     <li className="myVehicles-li-flag"> Sorry you don't have any vehicles, Add some here</li>

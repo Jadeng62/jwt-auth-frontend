@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 75vh;
+    min-height: 95vh;
     text-align: center;
     background-color: #F3F3F4;
     padding: 20px;
@@ -56,4 +56,9 @@
 
 .login-register:hover {
   text-decoration: underline;
+}
+
+.show-container {
+    border-radius: 8px;
+    background-color: #ababe0;
 }

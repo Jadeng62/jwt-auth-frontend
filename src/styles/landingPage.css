@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #F3F3F4;
+    background-color: #e6e0e0;
     font-family:"Roboto Condensed", sans-serif;
     font-size: 100%;
     color: #333;
@@ -76,6 +80,11 @@ p {
     align-items: center;
 }
 
+.landing-purpose {
+    text-align: center;
+    margin-left: 240px;
+}
+
 .landing-signup-link, .landing-signup-link:visited {
     color: #34343a;
     text-decoration: none;
@@ -86,15 +95,58 @@ p {
     text-decoration: underline;
 }
 
+.landing-features {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px;
+    background-color: #f0e9e9;
+    margin-top: 20px;
+}
+
+.landing-features-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f0e9e9;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+.landing-features-h3 {
+    margin-right: 200px;
+    margin-bottom: 100px;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.landing-features-item-p {
+    flex-grow: 1;
+}
+
+.landing-section-hero-text {
+    margin-left: 100px;
+}
+
+.landing-purpose-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-purpose {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 40px;
+}
 
 
-
-
-
-
-
-
-
+.landing-purpose-h3 {
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
 
 
 @media (max-width: 768px) {
@@ -113,3 +165,13 @@ p {
         font-size: 1.125rem;
     }
 }
+
+/* @media (max-width:1500px) {
+    .landing-purpose {
+        max-width: 100%;
+        margin-right: 400px;
+        margin-left: 100px;
+        font-weight: 100;
+        font-size: 16px;
+    }
+} */

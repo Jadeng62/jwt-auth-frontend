@@ -1,0 +1,33 @@
+.dashboard-cards-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.dashboard-card {
+    height: 600px;
+    width: 300px;
+    flex-basis: 30%;
+    text-align: center;
+    margin: 10px;
+    background-color: #F3F3F4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-card-h5 {
+    padding: 250px 0;
+    margin: 0;
+    font-size: 18px;
+}
+
+.one, .three {
+    background-color: #d5d5d5;
+}
